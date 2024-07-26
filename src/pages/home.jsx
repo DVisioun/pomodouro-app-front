@@ -1,90 +1,79 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
-  Page,
+  Link,
   Navbar,
   NavLeft,
   NavTitle,
-  NavTitleLarge,
   NavRight,
-  Link,
+  Page,
+  Tab,
+  Tabs,
   Toolbar,
-  Block,
-  BlockTitle,
-  List,
-  ListItem,
-  Button,
+  Icon,
 } from 'framework7-react'
 import '../css/app.css'
 
-const HomePage = () => (
-  <Page name="home">
-    {/* Top Navbar */}
-    <Navbar large sliding={false}>
-      <NavLeft>
-        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="left" />
-      </NavLeft>
-      <NavTitle sliding>pomodouross</NavTitle>
-      <NavRight>
-        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right" />
-      </NavRight>
-      <NavTitleLarge className="text-4xl text-red-500">
-        pomodouros
-      </NavTitleLarge>
-    </Navbar>
+function HomePage() {
+  return (
+    <Page className='h-screen !bg-gradient'>
+      <div className='bg-tertiary w-full flex p-3 items-center fixed top-0 justify-between'>
+        <NavLeft>
+          <img src='/images/logo.svg' className='w-10 mr-3' />
+        </NavLeft>
+        <NavTitle className='text-white font-bold font-bungee text-xl'>Pomod'ouro</NavTitle>
+        <NavRight>
+          <Link panelOpen="right">
+            <Icon f7="menu" size="30px" className='text-white'></Icon>
+          </Link>
+        </NavRight>
+      </div>
+      <Toolbar tabbar icons position='bottom' className='!bg-tertiary'>
+        <Link
+          tabLink="#tab-1"
+          iconMd="material:hourglass_top"
+          className='!text-white focus:underline'
+        />
+        <Link
+          tabLink="#tab-2"
+          iconIos="f7:calendar_fill"
+          iconMd="material:queue_music"
+          className='!text-white focus:underline'
+        />
+        <Link
+          tabLink="#tab-3"
+          iconMd="material:checklist"
+          className='!text-white focus:underline'
+        />
+        <Link
+          tabLink="#tab-4"
+          iconMd="material:menu_book"
+          className='!text-white focus:underline'
+        />
+        <Link
+          tabLink="#tab-5"
+          iconMd="material:pie_chart"
+          className='!text-white focus:underline'
+        />
+      </Toolbar>
 
-    {/* Page content */}
-    <Block>
-      <p className="text-4xl text-red-500">
-        This is an example of tabs-layout application. The main point of such
-        tabbed layout is that each tab contains independent view with its own
-        routing and navigation.
-      </p>
+      <Tabs>
+        <Tab id="tab-1" className="w-full h-full" tabActive>
+          Teste
+        </Tab>
+        <Tab id="tab-2" className="page-content">
 
-      <p>
-        Each tab/view may have different layout, different navbar type (dynamic,
-        fixed or static) or without navbar like this tab.
-      </p>
-    </Block>
-    <BlockTitle>Navigation</BlockTitle>
-    <List strong inset dividersIos>
-      <ListItem link="/about/" title="About" />
-      <ListItem link="/form/" title="Form" />
-    </List>
+        </Tab>
+        <Tab id="tab-3" className="page-content">
 
-    <BlockTitle>Modals</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
-      <Button fill popupOpen="#my-popup">
-        Popup
-      </Button>
-      <Button fill loginScreenOpen="#my-login-screen">
-        Login Screen
-      </Button>
-    </Block>
+        </Tab>
+        <Tab id="tab-4" className="page-content">
 
-    <BlockTitle>Panels</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
-      <Button fill panelOpen="left">
-        Left Panel
-      </Button>
-      <Button fill panelOpen="right">
-        Right Panel
-      </Button>
-    </Block>
+        </Tab>
+        <Tab id="tab-5" className="page-content">
 
-    <List strong inset dividersIos>
-      <ListItem
-        title="Dynamic (Component) Route"
-        link="/dynamic-route/blog/45/post/125/?foo=bar#about"
-      />
-      <ListItem
-        title="Default Route (404)"
-        link="/load-something-that-doesnt-exist/"
-      />
-      <ListItem
-        title="Request Data & Load"
-        link="/request-and-load/user/123456/"
-      />
-    </List>
-  </Page>
-)
+        </Tab>
+      </Tabs>
+    </Page >
+  )
+}
 export default HomePage

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Sora:wght@100..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,4 +8,13 @@
   height: 100vh;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-size: border-box;
+}
+
 /* Your app custom styles here */
+i::before {
+  background: transparent !important;
+}
