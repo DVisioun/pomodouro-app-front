@@ -1,3 +1,4 @@
+import Start from '../pages/start.jsx'
 import HomePage from '../pages/home.jsx'
 import AboutPage from '../pages/about.jsx'
 import FormPage from '../pages/form.jsx'
@@ -12,6 +13,10 @@ import NotFoundPage from '../pages/404.jsx'
 const routes = [
   {
     path: '/',
+    component: Start,
+  },
+  {
+    path: '/home',
     component: HomePage,
   },
   {
