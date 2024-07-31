@@ -11,6 +11,7 @@
     "build": "npm run lint && cross-env NODE_ENV=production vite build",
     "lint": "eslint src --ext js,jsx --max-warnings 0 --fix",
     "build-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova build",
+    "build-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production vite build && node ./build/build-cordova.js && cd cordova && cordova build android",
     "postinstall": "cpy --flat ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy --flat ./node_modules/material-icons/iconfont/*.* ./src/fonts/"
   },
   "browserslist": [
@@ -20,6 +21,7 @@
     "last 5 Firefox versions"
   ],
   "dependencies": {
+    "@tinymce/tinymce-react": "^5.1.1",
     "dom7": "^4.0.6",
     "framework7": "^8.3.3",
     "framework7-icons": "^5.0.5",

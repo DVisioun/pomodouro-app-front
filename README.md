@@ -6,7 +6,7 @@ Framework7 app created with following options:
 
 ```
 {
-  "cwd": "C:\\DVisioun\\pomodouro-app-front",
+  "cwd": "C:\\Users\\luana\\Desktop\\DVision\\pomodouro-app-front",
   "type": [
     "cordova"
   ],

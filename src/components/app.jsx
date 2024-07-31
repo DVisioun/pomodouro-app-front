@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { getDevice } from 'framework7/lite-bundle'
-import {
-  f7,
-  f7ready,
-  App,
-  View,
-} from 'framework7-react'
+import { f7, f7ready, App, View } from 'framework7-react'
 import cordovaApp from '../js/cordova-app'
 
 import routes from '../js/routes'
 import store from '../js/store'
-import Login from './Login/Login'
 
 const MyApp = () => {
   const device = getDevice()
@@ -51,7 +45,6 @@ const MyApp = () => {
   return (
     <App {...f7params}>
       <View id="view_home" main url="/" />
-      <Login />
     </App>
   )
 }
